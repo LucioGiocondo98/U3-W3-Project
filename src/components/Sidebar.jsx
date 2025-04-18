@@ -23,7 +23,7 @@ const Sidebar = ({ onSearchResults }) => {
   };
 
   return (
-    <div className="bg-secondary text-white vh-100 p-3 d-none d-lg-block z-1 border-end border-1 border-light">
+    <div className="bg-secondary text-white vh-100 p-3 d-none d-lg-block z-1 ">
       <h4>
         <i className="bi bi-apple text-light"></i> Music
       </h4>

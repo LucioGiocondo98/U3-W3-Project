@@ -20,7 +20,7 @@ const App = function () {
     <div className="bg-dark">
       <Container fluid className="p-0">
         <Row className="mx-auto">
-          <Col sm={2} className="d-none d-lg-block">
+          <Col sm={2} className="d-none d-lg-block vh-100 bg-secondary">
             <Sidebar onSearchResults={handleSearchResults} />
           </Col>
           <Col sm={12} lg={10} className="bg-dark">
