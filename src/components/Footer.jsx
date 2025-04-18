@@ -6,7 +6,7 @@ const Footer = () => {
     <Container className="mt-4">
       <Row>
         <Col>
-          <h3>Altro da esplorare</h3>
+          <h4 className="text-light">Altro da esplorare</h4>
           <Row>
             <Col xs={12} lg={4} className="mb-3">
               <Button

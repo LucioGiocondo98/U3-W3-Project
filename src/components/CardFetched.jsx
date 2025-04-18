@@ -14,6 +14,7 @@ const CardFetched = ({ albums }) => {
 
   return (
     <Row>
+      <h4 className="text-light">Nuove uscite</h4>
       {loading ? (
         <Col className="text-center mt-5">
           <Spinner animation="border" variant="light" />
