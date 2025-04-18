@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import MyNavbar from "./components/MyNavbar";
+import Sidebar from "./components/Sidebar";
+import CardFetched from "./components/CardFetched";
+import Novità from "./components/Novità";
+import NuoviEpisodiRadio from "./components/Nuovi EpisodiRadio";
+import Footer from "./components/Footer";
+import MusicPlayer from "./components/MusicPlayer";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = function () {
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="bg-dark">
+      <Container fluid className="p-0">
+        <Row className="mx-auto">
+          <Col sm={2} className="d-none d-lg-block">
+            <Sidebar onSearchResults={handleSearchResults} />
+          </Col>
+          <Col sm={12} lg={10} className="bg-dark">
+            <MyNavbar />
+            <Novità />
+            <NuoviEpisodiRadio />
+            <h3 className="text-center mb-4">Risultati della ricerca</h3>
+            <CardFetched albums={searchResults} />
+            <Footer />
+            <MusicPlayer />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
-export default App
+export default App;
