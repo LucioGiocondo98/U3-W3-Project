@@ -9,6 +9,7 @@ const CardFetched = ({ albums }) => {
   useEffect(() => {
     if (albums.length > 0) {
       setLoading(false);
+      console.log("Albums in CardFetched:", albums);
     }
   }, [albums]);
 
@@ -21,11 +22,11 @@ const CardFetched = ({ albums }) => {
         </Col>
       ) : visibleAlbums.length > 0 ? (
         visibleAlbums.map((album, index) => (
-          <Col sm={4} lg={2} key={album.id}>
+          <Col xs={4} lg={2} key={album.id}>
             {index < 6 ? (
               <CardCustom
                 title={album.title}
-                image={album.cover_medium}
+                image={album.album.cover}
                 artist={album.artist.name}
               />
             ) : null}
