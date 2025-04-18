@@ -7,6 +7,7 @@ import Novità from "./components/Novità";
 import NuoviEpisodiRadio from "./components/Nuovi EpisodiRadio";
 import Footer from "./components/Footer";
 import MusicPlayer from "./components/MusicPlayer";
+import AppleFooter from "./components/AppleFooter";
 
 const App = function () {
   const [searchResults, setSearchResults] = useState([]);
@@ -29,6 +30,7 @@ const App = function () {
             <h3 className="text-center mb-4">Risultati della ricerca</h3>
             <CardFetched albums={searchResults} />
             <Footer />
+            <AppleFooter />
             <MusicPlayer />
           </Col>
         </Row>
